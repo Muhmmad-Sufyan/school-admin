@@ -13,28 +13,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const authToken = localStorage.getItem("authToken");
-    if (!authToken) {
-      router.push("/login");
-      return;
-    }
 
-    const token = JSON.parse(authToken);
-    if (token.role === "user") {
-      toast.info("You do not have permission to access the admin page.", {
-        position: "top-right",
-        autoClose: 1500,
-      });
-      router.push("/");
-    } else if (token.role === "admin") {
-      toast.info("Welcome to the admin page", {
-        position: "top-right",
-        autoClose: 1500,
-      });
-      router.push("/admin");
-    }
-  }, [router]);
 
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
