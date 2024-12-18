@@ -17,38 +17,7 @@ const Homepage = () => {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    const authToken = localStorage.getItem('authToken');
-    if (!authToken) {
-      router.push('/login');
-    } else {
-      const token = JSON.parse(authToken);
 
-      const fetchUserData = async () => {
-        try {
-          const userResponse = await axios.get(
-            `http://localhost:5000/users/${token.id}`
-          );
-          setUser(userResponse.data);
-
-          const today = new Date().toISOString().split('T')[0];
-          const timeResponse = await axios.get(
-            `http://localhost:5000/timecount/${token.id}?date=${today}`
-          );
-          if (timeResponse.data && timeResponse.data.checkInTime) {
-            setSavedCheckInTime(timeResponse.data.checkInTime);
-            if (timeResponse.data.checkOutTime) {
-              setCheckOutTime(timeResponse.data.checkOutTime);
-            }
-          }
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-
-      fetchUserData();
-    }
-  }, [router]);
 
   const handleCheckIn = async () => {
     const authToken = localStorage.getItem('authToken');
