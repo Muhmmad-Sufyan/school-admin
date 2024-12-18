@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin",
+      "name": "Hassam Idress",
+      "category": "Graphic Design"
+    },
+    {
+      "id": "78d6",
+      "email": "qwert@gmail.com",
+      "password": "1234",
+      "role": "instructor",
+      "name": "Sufyan jutt",
+      "category": "Web developer"
+    },
+    {
+      "id": "9473",
+      "email": "1mut@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "name": "Sufyan jutt",
+      "category": "Ics"
+    }
+  ],
+  "timecount": [
+    {
+      "id": "78d6",
+      "name": "Sufyan jutt",
+      "role": "instructor",
+      "checkInTime": "11/21/2024, 04:17 PM",
+      "checkOutTime": "11/21/2024, 04:17 PM",
+      "diffInHours": 0.0008544444444444445
+    },
+    {
+      "id": "9473",
+      "name": "Sufyan jutt",
+      "role": "user",
+      "checkInTime": "12/17/2024, 04:52 PM",
+      "checkOutTime": "12/17/2024, 04:52 PM",
+      "diffInHours": 0.0009238888888888889
+    },
+    {
+      "id": "1",
+      "name": "Hassam Idress",
+      "role": "admin",
+      "checkInTime": "12/17/2024, 05:48 PM",
+      "checkOutTime": "12/17/2024, 05:48 PM",
+      "diffInHours": 0.0008136111111111111
+    }
+  ]
+}
