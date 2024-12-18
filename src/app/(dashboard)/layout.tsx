@@ -16,29 +16,7 @@ export default function DashboardLayout({
   const router = useRouter();
 
   
-  useEffect(() => {
-    
-    const authToken = localStorage.getItem("authToken");
-    
-    if (!authToken) {
-      router.push("/login");  
-      return;
-    }
-
-    const token = JSON.parse(authToken);
-    
-    
-    if (token.role === "admin" || token.role === "instructor") {
-      setIsAuthorized(true);
-    } else {
-      router.push("/");  
-    }
-  }, [router]);  
-
- 
-  if (!isAuthorized) {
-    return <div>Loading...</div>;  
-  }
+  
 
   return (
     <div className="h-screen flex">
